@@ -79,4 +79,4 @@ theme: next
 deploy:
   type: git
   repo: git@git.coding.net:pyn/fagougou-blog.git
-  branch: master
+  branch: rc
