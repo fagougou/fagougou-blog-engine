@@ -3,7 +3,7 @@ title: 'Embracing the Differences : Inside the Netflix API Redesign'
 date: 2018-03-15 10:20:28
 tags:
 ---
-# Embracing the Differences : Inside the Netflix API Redesign
+Source: https://medium.com/netflix-techblog/embracing-the-differences-inside-the-netflix-api-redesign-15fd8b3dc49d
 
 As I discussed in my [recent blog post on ProgrammableWeb.com](http://blog.programmableweb.com/2012/05/15/why-rest-keeps-me-up-at-night/), Netflix has found substantial limitations in the traditional one-size-fits-all (OSFA) REST API approach. As a result, we have moved to a new, fully customizable API. The basis for our decision is that Netflix’s streaming service is available on more than 800 different device types, almost all of which receive their content from our private APIs. In our experience, we have realized that supporting these myriad device types with an OSFA API, while successful, is not optimal for the API team, the UI teams or Netflix streaming customers. And given that the key audiences for the API are a small group of known developers to which the API team is very close (i.e., mostly internal Netflix UI development teams), we have evolved our API into a **platform for API development**. Supporting this platform are a few key philosophies, each of which is instrumental in the design of our new system. These philosophies are as follows:
 
