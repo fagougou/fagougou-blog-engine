@@ -4,6 +4,16 @@
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 
 
+
+{% if theme.pace %}
+   <script type='text/javascript'>
+!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
+  gio('init', 'bef3fc7f9b165f2c', {});
+  gio('send');
+</script>
+{% endif %}
+
+
 {% if theme.pace %}
   {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
   {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}

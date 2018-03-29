@@ -318,6 +318,7 @@ han: false
 # Baidu Analytics ID
 #baidu_analytics:
 
+
 # Duoshuo ShortName
 #duoshuo_shortname:
 
@@ -668,3 +669,7 @@ images: images
 
 # Theme version
 version: 5.1.2
+
+
+#### Analytics  
+growingio: true
