@@ -1,7 +1,7 @@
 ---
 title: Python协程光速入门
 date: 2018-03-29 20:31:37
-tags: Python,协程
+tags: [Python,协程]
 author: 法狗狗 NLP 数据科学家 - 大头队长
 ---
 
