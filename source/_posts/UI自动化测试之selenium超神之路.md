@@ -57,7 +57,7 @@ public class BaiduTest {
 	 @DataProvider(name = "data")
 	 public Object[][] data(){
 		 return new Object[][]{
-	           { "http://www.baidu.com", "百度一下，你就知道" },
+	           { "https://www.baidu.com", "百度一下，你就知道" },
 		 };
 	 }
 	 
@@ -70,7 +70,7 @@ public class BaiduTest {
 
 
 ```
-PASSED: Baidu_Homepage_0001("http://www.baidu.com", "百度一下，你就知道")
+PASSED: Baidu_Homepage_0001("https://www.baidu.com", "百度一下，你就知道")
 
 ===============================================
     Default test

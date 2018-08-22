@@ -150,7 +150,7 @@ import time
 
 
 def consumer():
-    r = 'http://baidu.com'
+    r = 'https://baidu.com'
     while True:
         n = yield requests.get(r).status_code
         if not n:
@@ -161,7 +161,7 @@ def consumer():
 def produce(c):
     c.send(None)
     for i in range(73000, 73100):
-        request_url = "http://www.jb51.net/article/%d.htm" % i
+        request_url = "https://www.jb51.net/article/%d.htm" % i
         print('[PRODUCER] Producing %s...' % request_url)
         r = c.send(request_url)
         print('[PRODUCER] Consumer return: %s' % r)
@@ -174,7 +174,7 @@ print(time.time() - async_start)
 
 sync_start = time.time()
 for i in range(73000, 73100):
-    url = "http://www.jb51.net/article/%d.htm" % i
+    url = "https://www.jb51.net/article/%d.htm" % i
     response = requests.get(url)
 print(time.time() - sync_start)
 
@@ -189,5 +189,3 @@ print(time.time() - sync_start)
 * 有兴趣可以去看看Python3对于异步IO的支持，比如aiohttp这些库，极大的降低了编码难度。
 * 另外像Tornado这类支持异步非阻塞的Web框架也是特别有意思的，这次写问答系统的爬虫Web服务就是基于这个库。
 * 如果还想继续深入了解，建议去看看《Linux/Unix系统编程手册》关于socket的几章，对于理解IO机制的底层原理（比如epoll，select）特别有帮助（我其实没看过，以后有时间会继续研究）。
-
-

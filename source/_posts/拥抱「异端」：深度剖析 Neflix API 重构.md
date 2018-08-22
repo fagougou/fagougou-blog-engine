@@ -14,7 +14,7 @@ _源文地址: https://medium.com/netflix-techblog/embracing-the-differences-ins
 
 ## 译文：
 
-我在[之前的文章](http://blog.programmableweb.com/2012/05/15/why-rest-keeps-me-up-at-night/)提到过，团队发现传统的单体（one-size-fits-all ）OSFA REST API 架构存在明显的问题和不足，后来我们决定搞个牛逼的——完全定制化 API。作出这个决定的主要原因是 Neflix 的视频串流服务需要在超过800种不同的设备上运行，其中一大部分是使用私有 API 来接收内容传输的。虽然 OSFA API 也能很好地支持各种类型的终端设备，但我们强烈意识到不管是对我们的 API 团队、UI 团队还是观看视频内容的用户，这种解决方案都不是最优的。另外还考虑到 API 的使用者是一些我们都比较熟悉而且合作无间的开发者（基本都是 Netflix 内部的开发团队），因此我们就将原本的 「API」 发展成为「API 开发平台」。这个平台由几个哲学理念支撑着我们去设计这个新系统，它们分别是：
+我在[之前的文章](https://blog.programmableweb.com/2012/05/15/why-rest-keeps-me-up-at-night/)提到过，团队发现传统的单体（one-size-fits-all ）OSFA REST API 架构存在明显的问题和不足，后来我们决定搞个牛逼的——完全定制化 API。作出这个决定的主要原因是 Neflix 的视频串流服务需要在超过800种不同的设备上运行，其中一大部分是使用私有 API 来接收内容传输的。虽然 OSFA API 也能很好地支持各种类型的终端设备，但我们强烈意识到不管是对我们的 API 团队、UI 团队还是观看视频内容的用户，这种解决方案都不是最优的。另外还考虑到 API 的使用者是一些我们都比较熟悉而且合作无间的开发者（基本都是 Netflix 内部的开发团队），因此我们就将原本的 「API」 发展成为「API 开发平台」。这个平台由几个哲学理念支撑着我们去设计这个新系统，它们分别是：
 
 - 拥抱异端（Differences of the Devices，不同的终端，_译者注_）
 - 分开处理内容的获取与分发
@@ -76,7 +76,7 @@ _源文地址: https://medium.com/netflix-techblog/embracing-the-differences-ins
 
 如上文所说，将部分客户端代码向服务端移植并支持自定义创建端口给了我们一个**将接口开发任务交给前端**的机会。我们得以这么做是因为这些私有 API 的消费者是 Neflix 自己的 UI 及设备团队。他们可以自主的维护更新他们自己的适配器上的代码（这个过程基本上不需要任何 API 开发团的人员参与），他们可以更灵活敏捷地关注于自己手上的开发任务上。也就是说，只要 Java API 上提供了有效的内容接口，前端们就可以针对他们手头上的设备做最大化的优化工作。与此同时，他们可以根据用户需求对内容按照需求自己封装来提升用户体验。他们也不再需要和后端团队绑死在一起，更不需要因为后端接口的种种限制成为开发瓶颈。API 的创新工作现在已经交到了前端团队手上了！还有，因为这些适配器是互相独立的，几乎不可能出现因为 API 的迭代会影响到其它设备的兼容问题，反正，你爱怎么弄，就怎么弄。
 
-当然了，这里引出了个需要忧虑的点是，通常前端团队比较熟悉类似 HTML5、CSS3、JavaScript 等技术。在此系统中，他们现在需要学习一些后端技术了。不过目前看来对我们来说这还只是个小 case，因为[我们的工程师文化是只招大牛](http://www.slideshare.net/reed2001/culture-1798664?ref=http://jobs.netflix.com/jobs.html)，特别是那些**适应力强**、**好奇心重**以及对**如何解决问题充满激情**的人。另外还有一个我们担心的点是，因为前端团队需要在服务端开发，有时可能会不小心搞了个无限循环或者不小心一下抓了一大坨量的数据进而把机子搞宕掉。为了弥补这个风险，我们正在研究「清洗引擎 scrubbing engines」，希望尽量减少出现这些错误的可能性。这么说吧，在 OSFA 中，设备上的代码可以像服务器一样容易 DDOS，但如果它在服务器上运行，它可能会是一个更大的潜在问题。
+当然了，这里引出了个需要忧虑的点是，通常前端团队比较熟悉类似 HTML5、CSS3、JavaScript 等技术。在此系统中，他们现在需要学习一些后端技术了。不过目前看来对我们来说这还只是个小 case，因为[我们的工程师文化是只招大牛](https://www.slideshare.net/reed2001/culture-1798664?ref=https://jobs.netflix.com/jobs.html)，特别是那些**适应力强**、**好奇心重**以及对**如何解决问题充满激情**的人。另外还有一个我们担心的点是，因为前端团队需要在服务端开发，有时可能会不小心搞了个无限循环或者不小心一下抓了一大坨量的数据进而把机子搞宕掉。为了弥补这个风险，我们正在研究「清洗引擎 scrubbing engines」，希望尽量减少出现这些错误的可能性。这么说吧，在 OSFA 中，设备上的代码可以像服务器一样容易 DDOS，但如果它在服务器上运行，它可能会是一个更大的潜在问题。
 
 ### 栗子:
 
@@ -99,6 +99,6 @@ _源文地址: https://medium.com/netflix-techblog/embracing-the-differences-ins
 对了，你要是对构建类似于这种大规模、基于云的解决方案也有兴趣，来来来，法狗狗欢迎你哦！
 
 _源标题：**Embracing the Differences : Inside the Netflix API Redesign**_
-_原作者：Daniel Jacobson ([@daniel_jacobson](http://www.twitter.com/daniel_jacobson)), Director of Engineering — Netflix API_
+_原作者：Daniel Jacobson ([@daniel_jacobson](https://www.twitter.com/daniel_jacobson)), Director of Engineering — Netflix API_
 
 _译者：Time, Tech Lead —Fagougou.com_
